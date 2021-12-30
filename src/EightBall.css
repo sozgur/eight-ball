@@ -1,0 +1,14 @@
+.EightBall {
+    border: 2px solid white;
+    border-radius: 100px;
+
+    width: 200px;
+    height: 200px;
+    margin-left: 42%;
+}
+
+.EightBall p {
+    color: white;
+    text-align: center;
+    padding: 60px;
+}
