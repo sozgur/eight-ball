@@ -6,9 +6,20 @@ const EightBall = (props) => {
         msg: "Think of a Question",
         color: "black",
     });
+
+    const [count, setCount] = useState(0);
+
     const pickAnswer = () => {
+        setCount(count + 1);
         const randIdx = Math.floor(Math.random() * props.answers.length);
         return props.answers[randIdx];
+    };
+    const restart = () => {
+        setAnswer({
+            msg: "Think of a Question",
+            color: "black",
+        });
+        setCount(0);
     };
     return (
         <div>
@@ -20,6 +31,10 @@ const EightBall = (props) => {
             >
                 <p>{answer.msg}</p>
             </div>
+            <p>Count: {count}</p>
+            <button className="EightBall-restart" onClick={restart}>
+                Restart
+            </button>
         </div>
     );
 };
